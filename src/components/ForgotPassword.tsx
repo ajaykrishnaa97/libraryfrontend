@@ -10,9 +10,12 @@ const ForgotPassword: React.FC = () => {
     setMessage("");
 
     try {
-      await axios.post("http://localhost:5134/api/Auth/forgot-password", {
-        email,
-      });
+      await axios.post(
+        "https://library-server-hxcjb5h7dhegcff8.canadacentral-01.azurewebsites.net/api/Auth/forgot-password",
+        {
+          email,
+        }
+      );
       setMessage(" If this email is registered, a reset link has been sent.");
     } catch (err) {
       console.error(err);

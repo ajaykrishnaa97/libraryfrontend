@@ -27,10 +27,13 @@ const SetPassword: React.FC = () => {
     }
 
     try {
-      await axios.post("http://localhost:5134/api/Auth/set-password", {
-        token,
-        password,
-      });
+      await axios.post(
+        "https://library-server-hxcjb5h7dhegcff8.canadacentral-01.azurewebsites.net/api/Auth/set-password",
+        {
+          token,
+          password,
+        }
+      );
       setMessage(" Password set successfully! Redirecting to login...");
       setTimeout(() => {
         navigate("/login");

@@ -17,7 +17,7 @@ const ApproveUsers: React.FC = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get<User[]>(
-        "http://localhost:5134/api/Auth/users",
+        "https://library-server-hxcjb5h7dhegcff8.canadacentral-01.azurewebsites.net/api/Auth/users",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -35,7 +35,7 @@ const ApproveUsers: React.FC = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        `http://localhost:5134/api/Auth/approve/${userId}`,
+        `https://library-server-hxcjb5h7dhegcff8.canadacentral-01.azurewebsites.net/api/Auth/approve/${userId}`,
         {},
         {
           headers: {

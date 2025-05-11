@@ -19,7 +19,7 @@ const ResetPassword: React.FC = () => {
 
       axios
         .get(
-          `http://localhost:5134/api/Auth/validate-reset-token?token=${encodeURIComponent(
+          `https://library-server-hxcjb5h7dhegcff8.canadacentral-01.azurewebsites.net/api/Auth/validate-reset-token?token=${encodeURIComponent(
             tokenFromUrl
           )}`
         )
@@ -48,10 +48,13 @@ const ResetPassword: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      await axios.post("http://localhost:5134/api/Auth/reset-password", {
-        token,
-        password,
-      });
+      await axios.post(
+        "https://library-server-hxcjb5h7dhegcff8.canadacentral-01.azurewebsites.net/api/Auth/reset-password",
+        {
+          token,
+          password,
+        }
+      );
       setMessage(
         " Your password has been reset successfully! You can now log in."
       );

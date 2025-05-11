@@ -17,7 +17,7 @@ const Register: React.FC = () => {
     const fetchLibraries = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5134/api/Auth/libraries"
+          "https://library-server-hxcjb5h7dhegcff8.canadacentral-01.azurewebsites.net/api/Auth/libraries"
         );
         setLibraries(response.data);
       } catch (error) {
@@ -33,14 +33,17 @@ const Register: React.FC = () => {
     setMessage("");
 
     try {
-      await axios.post("http://localhost:5134/api/Auth/register", {
-        name,
-        phoneNumber,
-        email,
-        address,
-        libraryId: parseInt(libraryId, 10),
-        role,
-      });
+      await axios.post(
+        "https://library-server-hxcjb5h7dhegcff8.canadacentral-01.azurewebsites.net/api/Auth/register",
+        {
+          name,
+          phoneNumber,
+          email,
+          address,
+          libraryId: parseInt(libraryId, 10),
+          role,
+        }
+      );
       setMessage(
         "Registration successful! Check your email to set your password."
       );

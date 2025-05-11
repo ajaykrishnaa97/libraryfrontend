@@ -16,7 +16,7 @@ const Login: React.FC = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5134/api/Auth/login",
+        "https://library-server-hxcjb5h7dhegcff8.canadacentral-01.azurewebsites.net/api/Auth/login",
         {
           email,
           password,
